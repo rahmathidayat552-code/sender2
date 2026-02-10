@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Broadcast - Sender Panel</title>
+    <title>Arasso - Panel Pangngiring</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,10 +44,10 @@
         <div class="flex items-center gap-4">
             <h1 class="text-xl font-bold text-white flex items-center gap-2">
                 <i data-lucide="mic" class="w-6 h-6 text-blue-500"></i>
-                Panel Pengirim
+                Arasso - Pangngiring
             </h1>
         </div>
-        <div id="connection-status" class="text-xs text-slate-500">Connecting...</div>
+        <div id="connection-status" class="text-xs text-slate-500">Assambung...</div>
     </header>
 
     <!-- Main Content -->
@@ -57,10 +57,10 @@
             <!-- Tabs -->
             <div class="flex border-b border-slate-800">
                 <button id="tab-record" class="cursor-pointer flex-1 py-4 text-center font-medium bg-slate-800 text-blue-400 border-b-2 border-blue-500 transition-colors flex items-center justify-center gap-2 hover:bg-slate-800/80">
-                    <i data-lucide="mic" class="w-4 h-4"></i> Rekam Suara
+                    <i data-lucide="mic" class="w-4 h-4"></i> Rakkang Suara
                 </button>
                 <button id="tab-tts" class="cursor-pointer flex-1 py-4 text-center font-medium text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 transition-colors flex items-center justify-center gap-2">
-                    <i data-lucide="keyboard" class="w-4 h-4"></i> Text to Speech
+                    <i data-lucide="keyboard" class="w-4 h-4"></i> Tuli' Jari Suara
                 </button>
             </div>
 
@@ -78,7 +78,7 @@
                 <!-- PANEL: RECORDING -->
                 <div id="panel-record" class="flex-1 flex flex-col items-center justify-center">
                     <div class="mb-8">
-                        <h2 id="action-label" class="text-3xl font-bold text-white mb-2">Klik untuk Bicara</h2>
+                        <h2 id="action-label" class="text-3xl font-bold text-white mb-2">Teqbeni punna Mabbicara</h2>
                         <p id="timer" class="text-slate-400 font-mono text-xl">0:00</p>
                     </div>
 
@@ -101,7 +101,7 @@
                     </div>
                     
                     <p class="text-xs text-slate-500 italic">
-                        Audio akan dikirim otomatis setelah perekaman dihentikan.
+                        Otomatis nikiring punna le'ba maki a'rakkang.
                     </p>
                 </div>
 
@@ -109,24 +109,24 @@
                 <div id="panel-tts" class="hidden flex-1 flex flex-col text-left">
                     <div class="flex-1 flex flex-col gap-4">
                         <div>
-                            <label class="block text-sm font-medium text-slate-400 mb-2">Pesan Pengumuman</label>
-                            <textarea id="tts-input" rows="5" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" placeholder="Ketik pengumuman di sini..."></textarea>
+                            <label class="block text-sm font-medium text-slate-400 mb-2">Pappaseng</label>
+                            <textarea id="tts-input" rows="5" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" placeholder="Tuli'i pappaseng anrinni..."></textarea>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-slate-400 mb-2">Suara AI</label>
                                 <select id="tts-voice" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option value="Kore">Kore (Wanita - Kalem)</option>
-                                    <option value="Puck">Puck (Pria - Netral)</option>
-                                    <option value="Fenrir">Fenrir (Pria - Berat)</option>
-                                    <option value="Aoede">Aoede (Wanita - Tegas)</option>
-                                    <option value="Zephyr">Zephyr (Pria - Ringan)</option>
+                                    <option value="Kore">Kore (Baine - Halusu)</option>
+                                    <option value="Puck">Puck (Burane - Biasa)</option>
+                                    <option value="Fenrir">Fenrir (Burane - Lompo)</option>
+                                    <option value="Aoede">Aoede (Baine - Gassing)</option>
+                                    <option value="Zephyr">Zephyr (Burane - Ringang)</option>
                                 </select>
                             </div>
                             <div class="flex items-end">
                                 <button id="tts-btn" class="cursor-pointer w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20">
-                                    <span id="tts-btn-text">Kirim Audio</span>
+                                    <span id="tts-btn-text">Kiring Suara</span>
                                     <i id="tts-btn-icon" data-lucide="send" class="w-4 h-4"></i>
                                     <i id="tts-btn-loading" data-lucide="loader-2" class="w-4 h-4 animate-spin hidden"></i>
                                 </button>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     <p class="text-xs text-slate-500 italic mt-6 text-center">
-                        Didukung oleh Gemini 2.5 AI Text-to-Speech
+                        Nibantu ri Gemini 2.5 AI Text-to-Speech
                     </p>
                 </div>
 
@@ -207,7 +207,7 @@
                             throw error;
                         }
                     }
-                    connectionStatus.innerText = "Connected";
+                    connectionStatus.innerText = "Tassambung";
                     connectionStatus.classList.add("text-green-500");
                     connectionStatus.classList.remove("text-slate-500");
                 } catch (e) {
@@ -293,7 +293,7 @@
 
             } catch (err) {
                 console.error(err);
-                showStatus('error', 'Akses mikrofon ditolak.');
+                showStatus('error', 'Tena ijin mikrofonna.');
             }
         }
 
@@ -313,7 +313,7 @@
             const voice = ttsVoice.value;
 
             if (!text) {
-                showStatus('error', 'Mohon ketik pesan terlebih dahulu.');
+                showStatus('error', 'Tuli\'i rolo pappasengna.');
                 return;
             }
 
@@ -360,14 +360,14 @@
             isUploading = loading;
             ttsBtn.disabled = loading;
             if (loading) {
-                ttsBtnText.innerText = "Memproses...";
+                ttsBtnText.innerText = "A'proses...";
                 ttsBtnIcon.classList.add('hidden');
                 ttsBtnLoading.classList.remove('hidden');
                 ttsInput.disabled = true;
                 ttsVoice.disabled = true;
                 ttsBtn.classList.add('opacity-70', 'cursor-not-allowed');
             } else {
-                ttsBtnText.innerText = "Kirim Audio";
+                ttsBtnText.innerText = "Kiring Suara";
                 ttsBtnIcon.classList.remove('hidden');
                 ttsBtnLoading.classList.add('hidden');
                 ttsInput.disabled = false;
@@ -380,7 +380,7 @@
         async function uploadAndSend(blob, title) {
             isUploading = true;
             if (currentMode === 'record') updateRecordUI();
-            showStatus('info', 'Sedang mengirim...');
+            showStatus('info', 'Angngiringi...');
 
             try {
                 // 1. Storage Upload
@@ -414,7 +414,7 @@
                     throw dbError;
                 }
 
-                showStatus('success', 'Pengumuman berhasil dikirim!');
+                showStatus('success', 'Pappaseng le\'bami takiring!');
 
             } catch (error) {
                 console.error("Upload failed:", error);
@@ -427,7 +427,7 @@
                         : `CREATE POLICY "Allow Public Insert" ON broadcasts FOR INSERT WITH CHECK (true);`;
                     showStatus('error', `Izin Ditolak (RLS pada ${type}).`, sql);
                 } else {
-                    showStatus('error', error.message || 'Gagal mengirim.');
+                    showStatus('error', error.message || 'Gagal angngiring.');
                 }
             } finally {
                 isUploading = false;
@@ -495,16 +495,16 @@
             if (isUploading) {
                 recordBtn.classList.add('bg-slate-800', 'border-slate-700', 'cursor-not-allowed');
                 stateLoading.classList.remove('hidden');
-                actionLabel.innerText = "Mengirim...";
+                actionLabel.innerText = "Angngiring...";
             } else if (isRecording) {
                 recordBtn.classList.add('bg-red-600', 'border-red-800', 'scale-95');
                 stateRecording.classList.remove('hidden');
                 pingRing.classList.remove('hidden');
-                actionLabel.innerText = "Merekam...";
+                actionLabel.innerText = "A'rakkang...";
             } else {
                 recordBtn.classList.add('bg-blue-600', 'border-blue-800', 'hover:scale-105');
                 stateIdle.classList.remove('hidden');
-                actionLabel.innerText = "Klik untuk Bicara";
+                actionLabel.innerText = "Teqbeni punna Mabbicara";
             }
         }
 
